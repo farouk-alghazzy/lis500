@@ -49,3 +49,11 @@ footer {
   padding: 15px;
 }
 
+/* Tech hero image styling */
+.hero-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  border-radius: 8px;
+}
+

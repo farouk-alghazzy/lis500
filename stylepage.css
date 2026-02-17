@@ -4,6 +4,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   color: #222;
+  text-align: center;
 }
 
 /* Navigation styling */
@@ -15,7 +16,8 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
@@ -38,7 +40,9 @@ header {
 
 /* Main content */
 main {
-  padding: 40px;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Footer styling */
@@ -49,16 +53,28 @@ footer {
   padding: 15px;
 }
 
-/* Tech hero image styling */
-.hero-image {
+p {
+  max-width: 700px;
+  margin: 15px auto;
+  line-height: 1.6;
+}
+/* ALL images centered */
+img {
   display: block;
   margin: 20px auto;
   max-width: 300px;
+  width: 100%;
   border-radius: 8px;
 }
 
-/* Tech hero name styling */
+/* Tech hero specific styling */
 .hero-name {
-  text-align: center;
+  margin-top: 20px;
 }
 
+/* Footer styling */
+footer {
+  background-color: #111;
+  color: white;
+  padding: 15px;
+}

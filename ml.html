@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIS 500 | Teachable Machine</title>
+  <link rel="stylesheet" href="stylepage.css">
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+
+  <!-- ml5.js -->
+  <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+</head>
+<body class="ml-page">
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="resources.html">Implicit Bias Resources</a></li>
+      <li><a href="techhero.html">Tech Heros</a></li>
+      <li><a href="ml.html">Teachable Machine</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Teachable Machine Project</h1>
+    <p>Cup, Bowl, and Plate Image Classifier</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Live Model Demo</h2>
+      <p>
+        This project uses a Teachable Machine image classifier trained on original
+        images of cups, bowls, and plates collected by our group.
+      </p>
+
+      <div id="canvas-container"></div>
+
+      <div class="prediction-box">
+        <h3>Current Prediction</h3>
+        <p id="prediction">Waiting...</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>About the Project</h2>
+      <p>
+        Our model was trained to distinguish between three common kitchen objects:
+        Cup, Bowl, and Plate. We used original images and tested how well the model
+        could identify each object through a live webcam feed.
+      </p>
+      <p>
+        This project also connects to themes from <em>Unmasking AI</em>, especially
+        the importance of training data, representation, and the limits of machine
+        learning systems when data is narrow or incomplete.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Links</h2>
+      <p>TODO: GitHub link here</p>
+      <p>TODO: Link dataset here</p>
+      <p>TODO: Add embeded video</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Farouk Alghazzy, John Bottcher, and Zuheb Ibrahim | UW-Madison</p>
+  </footer>
+
+  <script src="ml.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup() {
-  const canvas = createCanvas(640, 520);
+  const canvas = createCanvas(640, 480);
   canvas.parent("canvas-container");
 
   video = createCapture(VIDEO);
@@ -26,16 +26,10 @@ function classifyVideo() {
 
 function draw() {
   background(0);
+  image(video, 0, 0, width, height);
 
-  image(video, 0, 0, width, 480);
-
-  fill(0);
-  rect(0, 480, width, 40);
-
-  fill(255);
-  textAlign(CENTER, CENTER);
-  textSize(24);
-  text(`${label} (${(confidence * 100).toFixed(1)}%)`, width / 2, 500);
+  const predictionText = document.getElementById("prediction");
+  const predictionEmoji = document.getElementById("prediction-emoji");
 
   let emoji = "❓";
 
@@ -47,12 +41,13 @@ function draw() {
     emoji = "🍽️";
   }
 
-  textSize(100);
-  text(emoji, width / 2, 240);
-
-  const predictionText = document.getElementById("prediction");
+  // ✅ Keep percentage here
   if (predictionText) {
     predictionText.textContent = `${label} (${(confidence * 100).toFixed(1)}%)`;
+  }
+
+  if (predictionEmoji) {
+    predictionEmoji.textContent = emoji;
   }
 }
 
@@ -64,7 +59,7 @@ function gotResults(error, results) {
 
   if (results && results.length > 0) {
     label = results[0].label;
-    confidence = results[0].confidence;
+    confidence = results[0].confidence; // ← keep this
   }
 
   classifyVideo();

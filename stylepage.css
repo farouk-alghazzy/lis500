@@ -256,3 +256,51 @@ footer p {
   font-weight: 600;
   color: #4f0707;
 }
+
+#writeup-section p {
+  text-align: left;
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#prediction-emoji {
+  font-size: 4rem;
+  margin-top: -30px;
+}
+
+.ml-output {
+  width: 640px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.ml-output #canvas-container {
+  display: block;
+}
+
+.ml-output .prediction-box {
+  width: 100%;
+}
+
+.ml-output canvas {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ml-output .prediction-box {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.ml-output #canvas-container {
+  margin-bottom: 0;
+}
+
+.ml-output .prediction-box {
+  margin-top: 0;
+}
+
+.ml-output canvas {
+  display: block;
+}

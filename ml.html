@@ -37,15 +37,18 @@
         images of cups, bowls, and plates collected by our group.
       </p>
 
-      <div id="canvas-container"></div>
+      <div class="ml-output">
+        <div id="canvas-container"></div>
 
-      <div class="prediction-box">
-        <h3>Current Prediction</h3>
-        <p id="prediction">Waiting...</p>
+        <div class="prediction-box">
+          <h3>Current Prediction</h3>
+          <p id="prediction">Waiting...</p>
+          <div id="prediction-emoji">❓</div>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section id="writeup-section">
       <h2>About the Project</h2>
       <p>
         Our model was trained to distinguish between three common kitchen objects:
@@ -55,7 +58,35 @@
       <p>
         This project also connects to themes from <em>Unmasking AI</em>, especially
         the importance of training data, representation, and the limits of machine
-        learning systems when data is narrow or incomplete.
+        learning systems when data is narrow, biased, or incomplete.
+      </p>
+      <h2>Full 1000 Word Writeup</h2>
+      <p>
+        For this project, our group created an image classification model using Google’s Teachable Machine to distinguish between three everyday kitchen objects: cups, plates, and bowls. Each group member contributed at least 100 original images, resulting in a dataset of over 300 images. These images were taken in a variety of settings, with different lighting conditions, angles, and backgrounds, in an effort to make the model more robust. After training the model, we tested it using new images through a webcam interface to observe how accurately it could classify objects in real time.
+      </p>
+      <p>
+        At first, it appeared this would be relatively straightforward. Cups, plates, and bowls are common objects that most people can easily distinguish between, so it seemed likely that the model would be able to do the same. However, as we began testing the model, it became clear that even this basic classification problem involves a surprising amount of ambiguity and subjectivity. For example, when we tested the model with bowls, most of the time the model classified them as either a cup or plate. In a way this makes sense, a bowl is kind of a middle ground between a cup and a plate, so if it’s going to get something wrong it makes sense that it would be that. Additionally, plates viewed from the side were often classified as cups. This could suggest that we did not include enough side-view images of plates, but it raises the question of why the model specifically defaulted to “cup.” We noticed that when no object was clearly shown, the model often defaulted to “cup,” suggesting that it may have been the model’s fallback classification in uncertain situations. These discrepancies showed that AI doesn’t always get things right. They don’t always give the objective truth (even if that wasn’t the intention). Especially when the data doesn’t reflect what’s being tested.
+      </p>
+      <p>
+        This experience directly connects to the ideas presented in Joy Buolamwini’s Unmasking AI. One of the key lessons from her work is that machine learning systems are not inherently neutral or objective. Instead, they reflect the biases and assumptions present in the data used to train them. In a similar vein to Buolamwini being unrecognized because of her skin color, In our project, the model’s understanding of what counts as a “cup,” “plate,” or “bowl” or if it was detected at all, was entirely dependent on the images we provided. Side images of plates seemed to not be recognized as plates. Of course this is a much smaller problem than some people’s face being unrecognized, but it still shows how the data influences the results, and in cases like Buolamwini this can lead to extremely unfair advantages for people who don’t fit the mold the model was trained on. If our dataset contained mostly white plates on clean backgrounds, the model might struggle to recognize a patterned plate, a different colored plate, or one in a cluttered environment. In Buolamwini’s case the model most likely wasn’t trained on people of color, or at least not enough. This demonstrates how models are not learning the true essence of an object, but rather patterns within the specific data it was trained on. In cases that deal with people, this can be extremely disenfranchising, degrading, and biased.
+      </p>
+      <p>
+        Another important concept from Unmasking AI is the idea that systems can appear highly accurate while still failing in important ways. During testing, if we tried to replicate one of our data images directly, our model often performed well. However, when we introduced new variables such as different lighting, new angles, or new items not part of the data set the accuracy dropped (especially with bowls). This reflects Buolamwini’s argument that AI systems can give the illusion of objectivity and reliability, even though their performance may be uneven across different contexts. In her research on facial recognition, systems performed well on certain groups while failing on others. While our project is much simpler, and certainly less important than determining if someone is human or if something is a face, the underlying issue is similar: the model performs best on data that looks exactly (or almost exactly) like what it has already seen. Of course, in our case, it’s not that big of a deal that our model does a bad job at classifying bowls. But in the case of classifying people, if a person of color is unrecognized because of the data, that is obviously a huge problem.
+      </p>
+      <p>
+        The process of collecting our own dataset also highlighted how human decisions shape machine learning systems. We had to decide what counted as a valid image for each category, and how much variation to include. We picked items that most people would easily classify into one of these three categories, but we also considered items that are more ambiguous. If we decided to use something that some people classified as a plate, and others classified as a bowl, we would be making the final decision and that influences the results. These decisions (and the ones we avoided) are not purely technical; they involve judgment and interpretation. This reinforces Buolamwini’s point that AI systems are not separate from human values, but are deeply influenced by them. Even in a small project like ours, human choices played a central role in determining how the model behaves.
+      </p>
+      <p>
+        Additionally, this project made it clear how easily bias can be introduced, even unintentionally. We tried to use different backgrounds for each object, but if, for example, one group member took most of their photos in a similar environment, the model might have associated that background with a particular category. This could lead to incorrect classifications when the object appears in a different context. This relates to Buolamwini’s discussion of how limited or unrepresentative datasets can lead to biased outcomes. In larger, real-world systems, these kinds of biases can have serious consequences, especially when they affect decisions about people. To make an extreme example, if all of the data for facial recognition was done with indoor lighting, someone who was homeless and only had the chance to use outside lighting might not be able to get it to work.
+      </p>
+      <p>
+        Another lesson from Unmasking AI that resonated during this project is the importance of questioning how and why systems are built. It is easy to treat machine learning models as tools that simply “work,” without considering their limitations or broader implications. However, building our own model made it clear that these systems are fragile and highly dependent on the data and design choices behind them. This experience encourages a more critical perspective toward AI technologies, rather than accepting them as inherently trustworthy.
+      </p>
+      <p>
+        Finally, this project also connects to the idea that AI systems can obscure complexity by presenting simplified outputs. Our model produces a single label, even when the object might not clearly belong to one category, or in our case, any of the categories at all. This simplification can make the system seem more certain than it actually is. In reality, the boundaries between categories are often blurry, but the model is forced to make a definitive choice. For our project we tried to limit this “certainty” by including a percentage, but even then the results were far from perfect. This reflects a broader issue in AI, where complex realities are reduced to simplified classifications.
+      </p>
+      <p>
+        Overall, this project demonstrated that even a basic machine learning model is shaped by human decisions, limited data, and underlying assumptions. It reinforced key lessons from Unmasking AI, particularly the idea that AI systems are not neutral and that their outputs must be interpreted critically. While tools like Teachable Machine make it easy to build and use AI models, they also highlight how important it is to understand the limitations and potential biases within these systems. This experience has made us more aware of the need to question how AI systems are trained, what data they rely on, and how their results should be interpreted.
       </p>
     </section>
 
@@ -77,7 +108,7 @@
       </p>
 
       <p>
-        <strong>Teachable Machine Link:</strong><br>
+        <strong>Our Model On Teachable Machine:</strong><br>
         <a href="https://teachablemachine.withgoogle.com/models/e8lQ9X4bh/" target="_blank">
           Visit our model on Teachable Machine
         </a>

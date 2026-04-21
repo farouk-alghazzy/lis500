@@ -225,12 +225,14 @@ footer p {
 
 
 /* ML page specific styles */
+/* Center the p5 canvas container within the ML page content. */
 .ml-page #canvas-container {
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
+/* Keep the webcam canvas responsive while preserving visual styling. */
 .ml-page canvas {
   max-width: 100%;
   height: auto;
@@ -239,6 +241,7 @@ footer p {
   box-shadow: 0 8px 22px rgba(66, 15, 15, 0.14);
 }
 
+/* Card that displays the model's label/confidence output. */
 .prediction-box {
   margin-top: 18px;
   padding: 18px;
@@ -247,16 +250,19 @@ footer p {
   border-radius: 12px;
 }
 
+/* Tighten spacing below the prediction heading. */
 .prediction-box h3 {
   margin-bottom: 8px;
 }
 
+/* Emphasize the text prediction result. */
 #prediction {
   font-size: 1.15rem;
   font-weight: 600;
   color: #4f0707;
 }
 
+/* Reflection text */
 #writeup-section p {
   text-align: left;
   max-width: 70ch;
@@ -264,43 +270,52 @@ footer p {
   margin-right: auto;
 }
 
+/* Display a large emoji that mirrors the current class. */
 #prediction-emoji {
   font-size: 4rem;
   margin-top: -30px;
 }
 
+/* Wrapper for canvas + prediction card with a fixed desktop target width. */
 .ml-output {
   width: 640px;
   max-width: 100%;
   margin: 0 auto;
 }
 
+/* Switch container to block so the stacked card layout aligns edge-to-edge. */
 .ml-output #canvas-container {
   display: block;
 }
 
+/* Make the prediction card fill the wrapper width. */
 .ml-output .prediction-box {
   width: 100%;
 }
 
+/* Remove bottom canvas rounding to visually connect with the card below. */
 .ml-output canvas {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
+/* Remove top card rounding to create a single combined component. */
 .ml-output .prediction-box {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
+/* Eliminate gap between canvas and prediction card. */
 .ml-output #canvas-container {
   margin-bottom: 0;
 }
 
+/* Reset top margin so card sits flush under the canvas. */
 .ml-output .prediction-box {
   margin-top: 0;
 }
 
+/* Removes the extra space from inline elements */
 .ml-output canvas {
   display: block;
 }
